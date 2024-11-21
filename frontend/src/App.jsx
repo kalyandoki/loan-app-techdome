@@ -1,14 +1,14 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Login from './pages/Login';
-import Profile from './components/Profile';
-import Signup from './pages/Signup';
-import Dashboard from './pages/Dashboard';
-import ProtectedRoute from './components/ProtectedRoute'; // Import ProtectedRoute component
-import HomePage from './pages/HomePage';
-import AdminLoanList from './pages/AdminDashboard';
-import LoanList from './pages/LoanList';
-import NotFound from './pages/NotFound';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Login from "./pages/Login";
+import Profile from "./components/Profile";
+import Signup from "./pages/Signup";
+import Dashboard from "./pages/Dashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
+import HomePage from "./pages/HomePage";
+import AdminLoanList from "./pages/AdminDashboard";
+import LoanList from "./pages/LoanList";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -23,11 +23,11 @@ const App = () => {
         <Route path="/profile" element={<Profile />} />
 
         {/* Protected routes */}
-        <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
+        <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
           <Route path="/adminloanlist" element={<AdminLoanList />} />
         </Route>
 
-        <Route element={<ProtectedRoute allowedRoles={['customer']} />}>
+        <Route element={<ProtectedRoute allowedRoles={["customer"]} />}>
           <Route path="/loanlist" element={<LoanList />} />
         </Route>
 
